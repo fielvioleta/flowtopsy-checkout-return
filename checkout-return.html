@@ -172,13 +172,20 @@
       var actions = document.getElementById("actions");
       var openBtn = document.getElementById("openBtn");
 
+      // Never auto-navigate to chrome-extension:// — Edge blocks it
+      // (ERR_BLOCKED_BY_CLIENT). Instruct the user to open the toolbar icon.
       if (view.button && validExt) {
-        var target = "chrome-extension://" + ext + "/auth.html#" + view.hash;
-        openBtn.href = target;
-        openBtn.textContent = view.button;
+        openBtn.href = "#";
+        openBtn.textContent = "Done - open Flowtopsy";
+        openBtn.removeAttribute("target");
         actions.hidden = false;
-        hint.textContent = "If the button does nothing, Edge blocked the jump into the extension. Close this tab and click the Flowtopsy icon in the toolbar instead.";
-        try { location.replace(target); } catch (e) {}
+        hint.textContent =
+          "Close this tab, then click the Flowtopsy icon in the Edge toolbar to see your plan. Edge blocks automatic links into extensions.";
+        openBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          hint.textContent =
+            "Close this tab and click the Flowtopsy icon in the Edge toolbar.";
+        });
       } else {
         hint.textContent = "Close this tab and open Flowtopsy from the Edge toolbar.";
       }
