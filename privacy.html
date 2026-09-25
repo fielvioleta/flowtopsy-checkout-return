@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Flowtopsy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142018;
+      --muted: #4d5c52;
+      --paper: #f3f6f2;
+      --card: #ffffff;
+      --accent: #0f7a4c;
+      --line: #d5ddd6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 1.5rem;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.55;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #d9efe0 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #e7eef2 0%, transparent 50%),
+        var(--paper);
+    }
+    main {
+      width: min(100%, 42rem);
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem 1.75rem;
+      box-shadow: 0 18px 40px rgba(20, 32, 24, 0.08);
+    }
+    .brand {
+      font-size: 0.8rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.5rem;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.65rem;
+      line-height: 1.2;
+    }
+    .meta {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    h2 {
+      margin: 1.35rem 0 0.45rem;
+      font-size: 1.05rem;
+    }
+    h3 {
+      margin: 0.9rem 0 0.35rem;
+      font-size: 0.95rem;
+    }
+    p, li { color: var(--ink); }
+    p { margin: 0.4rem 0; }
+    ul { margin: 0.35rem 0 0.5rem; padding-left: 1.2rem; }
+    a { color: var(--accent); }
+    .note {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Flowtopsy</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: 2026-09-25 · Contact: <a href="mailto:fielv@tripex.io">fielv@tripex.io</a></p>
+
+    <h2>Summary</h2>
+    <p>Flowtopsy helps you record how you use websites on your device and turn those sessions into structured flows, test cases, and exports. Account, billing, and optional AI polish features use our cloud providers (Supabase, Stripe, OpenAI).</p>
+
+    <h2>Data we process</h2>
+    <h3>On your device (local)</h3>
+    <ul>
+      <li>Recording metadata (URLs, steps, selectors, timestamps)</li>
+      <li>Screenshot images captured during recording</li>
+      <li>Extension settings and cached session/entitlement state</li>
+    </ul>
+    <p>Local recordings stay in browser extension storage unless you export or delete them. We do not store password field values.</p>
+
+    <h3>On our servers</h3>
+    <ul>
+      <li>Account email and authentication identifiers (Supabase Auth)</li>
+      <li>Plan status, Free Start Recording count, AI polish quota counters, and related entitlement fields</li>
+      <li>Payment-related identifiers from Stripe when you subscribe — card numbers are handled by Stripe, not stored by Flowtopsy</li>
+    </ul>
+
+    <h3>AI polish (Pro)</h3>
+    <p>When you use Pro AI polish (user manual or test case), the text you submit for polishing is sent to <strong>OpenAI</strong> to generate an improved version. Do not include secrets or personal data you do not want processed by that provider.</p>
+
+    <h3>Permissions</h3>
+    <p>The extension may request broad site access so it can record flows and take screenshots on pages you choose. We do not sell your browsing content.</p>
+
+    <h2>How we use data</h2>
+    <ul>
+      <li>Provide recording, review, export, and account features</li>
+      <li>Enforce Free limits and Pro access (including AI polish quotas)</li>
+      <li>Process subscriptions and prevent abuse</li>
+      <li>Operate, secure, and improve the service</li>
+    </ul>
+
+    <h2>Sharing</h2>
+    <p>We share data only with processors needed to run the product:</p>
+    <ul>
+      <li><strong>Supabase</strong> — authentication and account/entitlement data</li>
+      <li><strong>Stripe</strong> — subscription payments</li>
+      <li><strong>OpenAI</strong> — optional AI polish requests you trigger</li>
+    </ul>
+    <p>We do not sell personal data.</p>
+
+    <h2>Retention</h2>
+    <ul>
+      <li>Local recordings: until you delete them or uninstall the extension</li>
+      <li>Account / entitlement data: while your account exists, and longer if required for legal or fraud prevention</li>
+      <li>To request account deletion, email <a href="mailto:fielv@tripex.io">fielv@tripex.io</a></li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>We use industry-standard providers and least-privilege access. No method of transmission or storage is 100% secure.</p>
+
+    <h2>Children</h2>
+    <p>Flowtopsy is not directed at children under 13 (or the minimum age in your region).</p>
+
+    <h2>Changes</h2>
+    <p>We may update this policy. The “Last updated” date will change; material changes may also be noted in the product or store listing.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or deletion requests: <a href="mailto:fielv@tripex.io">fielv@tripex.io</a></p>
+
+    <p class="note">This page is the public privacy policy for the Flowtopsy Chrome extension.</p>
+  </main>
+</body>
+</html>
