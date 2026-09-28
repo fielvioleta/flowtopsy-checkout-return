@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flowtopsy checkout</title>
+  <style>
+    :root { color-scheme: light; --ink: #142018; --muted: #4d5c52; --paper: #f3f6f2; --card: #fff; --accent: #0f7a4c; --line: #d5ddd6; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 1.5rem;
+      font-family: "Segoe UI", system-ui, sans-serif; color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #d9efe0 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #e7eef2 0%, transparent 50%),
+        var(--paper);
+    }
+    main {
+      width: min(100%, 26rem); background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0 18px 40px rgba(20, 32, 24, 0.08);
+    }
+    .brand { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 1rem; font-weight: 600; }
+    h1 { margin: 0 0 0.5rem; font-size: 1.65rem; line-height: 1.2; letter-spacing: -0.02em; }
+    p { margin: 0 0 0.75rem; color: var(--muted); line-height: 1.45; }
+    code { font-family: ui-monospace, Consolas, monospace; color: var(--ink); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Flowtopsy</p>
+    <h1 id="title">Opening checkout</h1>
+    <p id="status">The sandbox payment form should appear over this page.</p>
+    <p>Sandbox card <code>4242 4242 4242 4242</code>, any future expiry, any CVC. This does not charge a real card.</p>
+  </main>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    var TOKEN = "test_92623bcdbf8b1ae1ba96a6eb0ce";
+    var txn = new URLSearchParams(location.search).get("_ptxn");
+    var title = document.getElementById("title");
+    var status = document.getElementById("status");
+    function fail(message) {
+      title.textContent = "Checkout unavailable";
+      status.textContent = message;
+    }
+    if (!txn) {
+      fail("Open this page from a Flowtopsy checkout link.");
+    } else if (!window.Paddle) {
+      fail("Paddle could not load. Check your connection and reload.");
+    } else {
+      Paddle.Environment.set("sandbox");
+      Paddle.Initialize({
+        token: TOKEN,
+        eventCallback: function (event) {
+          if (!event || !event.name) return;
+          if (event.name === "checkout.completed") {
+            title.textContent = "Sandbox payment received";
+            status.textContent = "You can close this window. Pro is not switched on in the extension yet.";
+          }
+          if (event.name === "checkout.error" || event.name === "checkout.payment.error") {
+            fail("Paddle could not open this checkout. Start again from Flowtopsy.");
+          }
+        }
+      });
+      Paddle.Checkout.open({ transactionId: txn });
+    }
+  </script>
+</body>
+</html>

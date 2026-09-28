@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flowtopsy — Record flows. Ship test cases.</title>
   <meta name="description" content="Flowtopsy is a Chrome extension that records browser flows and turns them into test cases, manuals, and Playwright/Cypress scaffolding." />
+  <script>
+    (function () {
+      var txn = new URLSearchParams(location.search).get("_ptxn");
+      if (txn) location.replace("checkout.html?_ptxn=" + encodeURIComponent(txn));
+    })();
+  </script>
   <style>
     :root {
       color-scheme: light;
