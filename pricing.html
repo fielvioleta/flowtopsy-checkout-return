@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing - Flowtopsy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #142018;
+      --muted: #4d5c52;
+      --paper: #f3f6f2;
+      --card: #ffffff;
+      --accent: #0f7a4c;
+      --line: #d5ddd6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 1.5rem;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.55;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #d9efe0 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #e7eef2 0%, transparent 50%),
+        var(--paper);
+    }
+    main {
+      width: min(100%, 42rem);
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem 1.75rem;
+      box-shadow: 0 18px 40px rgba(20, 32, 24, 0.08);
+    }
+    .brand {
+      font-size: 0.8rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.5rem;
+    }
+    h1 { margin: 0 0 0.35rem; font-size: 1.65rem; line-height: 1.2; }
+    .meta { margin: 0 0 1.25rem; color: var(--muted); font-size: 0.92rem; }
+    h2 { margin: 1.35rem 0 0.45rem; font-size: 1.05rem; }
+    p, li { color: var(--ink); }
+    p { margin: 0.4rem 0; }
+    ul { margin: 0.35rem 0 0.5rem; padding-left: 1.2rem; }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 0.5rem; }
+    th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 0.85rem; color: var(--muted); font-weight: 650; }
+    .price { font-weight: 700; }
+    .note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="brand">Flowtopsy</p>
+    <h1>Pricing</h1>
+    <p class="meta">Digital software. Prices in USD. Contact: <a href="mailto:flowtopsy2026@gmail.com">flowtopsy2026@gmail.com</a></p>
+
+    <p>Flowtopsy is a Chrome extension. It records a browser session on your device and turns that session into a structured flow, a test case, a user manual, and Playwright or Cypress scaffolding. Recordings stay on your device.</p>
+
+    <table>
+      <thead>
+        <tr><th>Plan</th><th>Price</th><th>What you get</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Free</td>
+          <td class="price">$0</td>
+          <td>5 Start Recording uses for the life of a verified account. No card.</td>
+        </tr>
+        <tr>
+          <td>Pro monthly</td>
+          <td class="price">$12 / month</td>
+          <td>Unlimited Start Recording, exports, and 30 AI manual polishes plus 30 AI test-case polishes each UTC month. Renews monthly until you cancel.</td>
+        </tr>
+        <tr>
+          <td>Pro yearly</td>
+          <td class="price">$99 / year</td>
+          <td>Same as Pro monthly, billed once a year. Renews yearly until you cancel.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Included with Pro</h2>
+    <ul>
+      <li>Unlimited Start Recording</li>
+      <li>Markdown test case, Playwright, Cypress, user manual, and screenshot ZIP export</li>
+      <li>Optional AI polish of manual and test-case text (capped per month)</li>
+    </ul>
+    <p>There is no team plan, cloud storage of recordings, or consulting service. You use the software yourself.</p>
+
+    <h2>How billing works</h2>
+    <p>Pro is sold as a subscription through Paddle, the merchant of record. You can cancel anytime. Access continues until the end of the period you already paid for, unless a refund is issued under the <a href="refund.html">refund policy</a>.</p>
+
+    <p class="note">
+      <a href="index.html">Home</a> ·
+      <a href="terms.html">Terms of service</a> ·
+      <a href="privacy.html">Privacy policy</a> ·
+      <a href="refund.html">Refund policy</a> ·
+      <a href="support.html">Support</a>
+    </p>
+  </main>
+</body>
+</html>
