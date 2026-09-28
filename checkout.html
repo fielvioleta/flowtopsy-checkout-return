@@ -55,7 +55,7 @@
           if (!event || !event.name) return;
           if (event.name === "checkout.completed") {
             title.textContent = "Sandbox payment received";
-            status.textContent = "You can close this window. Pro is not switched on in the extension yet.";
+            status.textContent = "Reopen Flowtopsy. Pro appears after the sandbox notification lands.";
           }
           if (event.name === "checkout.error" || event.name === "checkout.payment.error") {
             fail("Paddle could not open this checkout. Start again from Flowtopsy.");
