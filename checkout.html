@@ -56,7 +56,11 @@
         eventCallback: function (event) {
           if (!event || !event.name) return;
           if (event.name === "checkout.completed") {
-            show("Payment received", "Reopen Flowtopsy. Pro appears after the sandbox notification lands.");
+            try { Paddle.Checkout.close(); } catch (ignore) {}
+            show("Payment received", "Return to Flowtopsy. Pro shows in the side panel.");
+            setTimeout(function () {
+              try { Paddle.Checkout.close(); } catch (ignore) {}
+            }, 300);
           }
           if (event.name === "checkout.error" || event.name === "checkout.payment.error") {
             fail("Paddle could not open this checkout. Start again from Flowtopsy.");
