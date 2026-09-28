@@ -63,7 +63,10 @@
           }
         }
       });
-      Paddle.Checkout.open({ transactionId: txn });
+      Paddle.Checkout.open({
+        transactionId: txn,
+        settings: { allowLogout: false }
+      });
     }
   </script>
 </body>
